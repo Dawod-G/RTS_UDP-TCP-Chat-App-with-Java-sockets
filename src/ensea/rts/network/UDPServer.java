@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
+import java.nio.charset.StandardCharsets;
 
 public class UDPServer {
     private final int listeningPort;
@@ -32,7 +33,7 @@ public class UDPServer {
             DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
             socket.receive(packet);
 
-            String received = new String(packet.getData(), 0, packet.getLength(), "UTF-8");
+            String received = new String(packet.getData(), 0, packet.getLength(), StandardCharsets.UTF_8);
 
             InetAddress clientAddress = packet.getAddress();
             int clientPort = packet.getPort();

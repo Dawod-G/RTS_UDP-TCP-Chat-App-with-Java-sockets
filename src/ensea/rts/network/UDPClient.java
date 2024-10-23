@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
+import java.nio.charset.StandardCharsets;
 
 public class UDPClient {
     /**
@@ -35,7 +36,7 @@ public class UDPClient {
                 break;
             }
 
-            byte[] buffer = inputLine.getBytes("UTF-8");
+            byte[] buffer = inputLine.getBytes(StandardCharsets.UTF_8);
             DatagramPacket packet = new DatagramPacket(buffer, buffer.length, serverInetAddress, serverPort);
             socket.send(packet);
         }
