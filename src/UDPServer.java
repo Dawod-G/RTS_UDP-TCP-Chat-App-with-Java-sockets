@@ -4,10 +4,15 @@ import java.net.DatagramSocket;
 import java.net.InetAddress;
 
 public class UDPServer {
-    private int listeningPort;
+    private final int listeningPort;
     private static final int maxBytes = 1024;
-    private byte buffer[] = new byte[maxBytes];
+    private final byte[] buffer = new byte[maxBytes];
 
+    /**
+     * Constructor to initialize UDPServer with a specific port.
+     *
+     * @param listeningPort The port on which the server listens.
+     */
     public UDPServer(int listeningPort) {
         this.listeningPort = listeningPort;
     }
@@ -20,6 +25,7 @@ public class UDPServer {
         DatagramSocket socket = new DatagramSocket(listeningPort);
         System.out.println("Server started on port: " + listeningPort);
 
+        // TODO: maybe add a timeout depending of the state of the server
         while (true) {
             DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
             socket.receive(packet);
@@ -35,6 +41,12 @@ public class UDPServer {
     }
 
     // TODO: add toString method
+
+    /**
+     * Main method to run the UDPServer.
+     *
+     * @param args Command line arguments.
+     */
     public static void main(String[] args) throws IOException {
         int port = 70;
         if (args.length > 0) {
@@ -46,5 +58,3 @@ public class UDPServer {
         }
     }
 }
-
-
