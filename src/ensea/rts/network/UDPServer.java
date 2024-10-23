@@ -1,3 +1,5 @@
+package ensea.rts.network;
+
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
@@ -30,8 +32,7 @@ public class UDPServer {
             DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
             socket.receive(packet);
 
-            String received = new String(packet.getData(), 0, packet.getLength());
-            // TODO: add UTF_8 encoding
+            String received = new String(packet.getData(), 0, packet.getLength(), "UTF-8");
 
             InetAddress clientAddress = packet.getAddress();
             int clientPort = packet.getPort();
@@ -40,7 +41,10 @@ public class UDPServer {
         }
     }
 
-    // TODO: add toString method
+    @Override
+    public String toString() {
+        return "UDPServer listening on port: " + listeningPort;
+    }
 
     /**
      * Main method to run the UDPServer.

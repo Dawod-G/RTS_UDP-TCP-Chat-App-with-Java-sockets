@@ -1,3 +1,5 @@
+package ensea.rts.network;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -26,7 +28,7 @@ public class UDPClient {
         BufferedReader userInput = new BufferedReader(new InputStreamReader(System.in));
         String inputLine;
 
-        System.out.println("Enter the text to send to the server.");
+        System.out.println("Enter text to send to the server (type 'exit' to quit):");
 
         while ((inputLine = userInput.readLine()) != null) {
             if ("exit".equalsIgnoreCase(inputLine)) {
