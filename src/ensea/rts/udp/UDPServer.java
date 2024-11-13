@@ -1,4 +1,4 @@
-package ensea.rts.network;
+package ensea.rts.udp;
 
 import java.io.IOException;
 import java.net.DatagramPacket;

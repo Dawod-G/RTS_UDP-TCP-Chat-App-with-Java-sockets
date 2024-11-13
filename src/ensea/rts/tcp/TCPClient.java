@@ -1,4 +1,4 @@
-package ensea.rts.network;
+package ensea.rts.tcp;
 
 import java.io.*;
 import java.net.Socket;
