@@ -33,7 +33,7 @@ public class TCPClient {
                 out.println(userInput);
 
                 String serverResponse = in.readLine();
-                System.out.println("Server response: " + serverResponse);
+                System.out.println(serverResponse);
             }
 
         } catch (IOException e) {
