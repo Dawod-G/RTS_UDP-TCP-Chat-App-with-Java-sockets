@@ -178,6 +178,6 @@ public void run() {
 ### Communication between the Client and the Server
 Now we test the communication between the 2 Clients and the Server :
 
-<p align="center"> <img src="media/TCPMultiServer.png" width="25%" height="auto" /> </p>
+<p align="center"> <img src="media/TCPMultiServer.png" width="45%" height="auto" /> </p>
 
 We can see that the code works !
