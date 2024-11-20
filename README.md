@@ -104,7 +104,7 @@ public void launch() throws IOException {
 </p>
 
 The client sends text messages to the server using UDP datagrams, and the server receives these messages, displaying them with the client's address and port.
-       
+
 ## TCP
 ### [`TCPClient`(src/ensea/rts/tcp/TCPClient.java)
 For the `TCPClient`, we create a `Socket` to connect to the specified server and port. The `PrintWriter` and `BufferedReader` are used to send and receive data from the server, respectively. We use a `Scanner` to read user input from the console.
