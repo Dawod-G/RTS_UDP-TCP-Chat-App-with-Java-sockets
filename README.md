@@ -4,7 +4,7 @@
 
 # UDP/TCP Chat App with Java sockets
 ## UDP
-### [`UDP Client`(src/ensea/rts/udp/UDPClient.java)
+### [`UDP Client`(src/ensea/rts/udp/UDPClient.java)]
 
 We want to create a `UDPClient` class that reads the text lines entered by the user from the standard input and sends them, encoded in ”UTF_8”, in a UDP datagram to the server specified in the argument on the command line.
 
@@ -39,7 +39,7 @@ return;
     }
 ```
 
-### [`UDP Server`(src/ensea/rts/udp/UDPServer.java)
+### [`UDP Server`(src/ensea/rts/udp/UDPServer.java)]
 
 We want to create an `UDPServer` class representing a server that expects to receive datagrams from its clients containing strings encoded in ”UTF-8”. This server simply displays on the standard output of the received string prefixed with the client’s address.
 
@@ -106,10 +106,10 @@ public void launch() throws IOException {
 The client sends text messages to the server using UDP datagrams, and the server receives these messages, displaying them with the client's address and port.
        
 ## TCP
-### [`TCPClient`(src/ensea/rts/tcp/TCPClient.java)
+### [`TCPClient`(src/ensea/rts/tcp/TCPClient.java)]
 For the `TCPClient`, we create a `Socket` to connect to the specified server and port. The `PrintWriter` and `BufferedReader` are used to send and receive data from the server, respectively. We use a `Scanner` to read user input from the console.
 
-### [`TCPServer`(src/ensea/rts/tcp/TCPServer.java)
+### [`TCPServer`(src/ensea/rts/tcp/TCPServer.java)]
 
 Now we want to create a `TCPServer` class that responds with an echo of the received text, preceded by the client's IP address.
 
@@ -126,7 +126,7 @@ When a client connects, we create a `PrintWriter` to send data back to the clien
 </p>
 The client establishes a connection to the server and sends text messages. The server receives these messages and responds with an echo, including the client's IP address and port.
 
-### [`TCPMultiServer`(src/ensea/rts/tcp/TCPMultiServer.java)
+### [`TCPMultiServer`(src/ensea/rts/tcp/TCPMultiServer.java)]
 The `TCPMultiServer` class listens for incoming client connections on a specified port and handles each connection in a separate thread.
 
 The `startServer` method creates a `ServerSocket` to listen for incoming connections on the specified port. When a client connects, the server accepts the connection and creates a new `ClientHandler` thread to handle the communication with the client.
