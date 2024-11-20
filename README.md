@@ -180,4 +180,4 @@ Now we test the communication between the 2 Clients and the Server :
 
 <p align="center"> <img src="media/TCPMultiServer.png" width="45%" height="auto" /> </p>
 
-We can see that the code works !
+We can see that the server receiving messages from both clients and responding, demonstrating that the multi-threaded server can handle multiple client connections simultaneously.
