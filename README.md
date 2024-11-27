@@ -3,6 +3,25 @@
 ### Authors : David GAMIETTE, Aurélien ZART
 
 # UDP/TCP Chat App with Java sockets
+## Start the Chat App
+To use the chat app, you need to follow these instructions :
+- Download the latest JAR archive version of the project [here](https://github.com/DawodGAMIETTE/RTS_UDP-TCP-Chat-App-with-Java-sockets/releases/latest),
+- Execute the JAR archive with the following command:
+```shell
+java -jar RTS_Chat_App.jar <mode> [options]
+```
+Where `<mode>` is the mode you want to use (`tcp-client`, `tcp-server`, `tcp-multiserver`, `udp-client`, `udp-server`) and `[options]` are the options you want to use with the mode.
+
+List of options available:
+- `tcp-client`: server address (required) and port (required)
+- `tcp-server`: port (optional, `9090` by default)
+- `tcp-multiserver`: port (optional, `9090` by default)
+- 
+- `udp-client`: server address (required) and port (required)
+- `udp-server`: port (optional, `70` by default)
+
+You can also open the JAR archive with IntelliJ IDEA by following this [procedure](https://www.jetbrains.com/help/idea/working-with-artifacts.html#run_jar_artifact).
+
 ## UDP
 ### [`UDP Client`](src/ensea/rts/udp/UDPClient.java)
 

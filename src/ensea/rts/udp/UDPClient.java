@@ -16,7 +16,7 @@ public class UDPClient {
      */
     public static void main(String[] args) {
         if (args.length < 2) {
-            System.err.println("Missing arguments \"server\" or \"port\".");
+            System.err.println("Missing arguments \"server address\" or \"port\".");
             return;
         }
 
