@@ -200,3 +200,47 @@ Now we test the communication between the 2 Clients and the Server :
 <p align="center"> <img src="media/TCPMultiServer.png" width="45%" height="auto" /> </p>
 
 We can see that the server receiving messages from both clients and responding, demonstrating that the multi-threaded server can handle multiple client connections simultaneously.
+
+# Unit Testing
+We use JUnit 5 to test the different classes of the project. We test the `UDPClient` and`UDPServer` classes.
+
+### [`UDPClientTest`](src/ensea/rts/udp/UDPClientTest.java)
+To test the functionality of the `UDPClient` class, we create an `UDPClientTest` class who contains one test method: `testMainMethodWithMissingArguments`.
+
+In this method, we initialize an empty `args` array and use the `assertThrows` method to verify that an `IOException` is thrown when `UDPClient.main(args)` is called.
+
+```java
+@Test
+public void testMainMethodWithMissingArguments() {
+String[] args = {};
+Exception exception = assertThrows(IOException.class, () -> {
+UDPClient.main(args);
+});
+assertEquals("Missing arguments \"server\" or \"port\".", exception.getMessage());
+}
+```
+
+### [`UDPServerTest`](src/ensea/rts/udp/UDPServerTest.java)
+We also add an `UDPServerTest` class to test the functionality of the `UDPServer` class. It contains two test methods: `testToString` and `testDefaultConstructor`.
+
+In the `testToString` method, we create an instance of `UDPServer` with a specified port (for example, 8080) and check if the `toString` method returns the expected string: "UDPServer listening on port 8080".
+
+```java
+@Test
+public void testToString() {
+UDPServer server = new UDPServer(8080);
+String expected = "UDPServer listening on port 8080";
+assertEquals(expected, server.toString());
+}
+```
+
+In the `testDefaultConstructor` method, we create an instance of `UDPServer` using the default constructor and check if the `toString` method returns the expected string: "UDPServer listening on port 70".
+
+```java
+@Test
+public void testDefaultConstructor() {
+    UDPServer server = new UDPServer();
+    String expected = "UDPServer listening on port 70";
+    assertEquals(expected, server.toString());
+}
+```
