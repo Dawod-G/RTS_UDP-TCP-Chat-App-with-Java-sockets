@@ -16,7 +16,7 @@ List of options available:
 - `tcp-client`: server address (required) and port (required)
 - `tcp-server`: port (optional, `9090` by default)
 - `tcp-multiserver`: port (optional, `9090` by default)
-- 
+
 - `udp-client`: server address (required) and port (required)
 - `udp-server`: port (optional, `70` by default)
 
