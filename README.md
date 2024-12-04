@@ -201,7 +201,7 @@ Now we test the communication between the 2 Clients and the Server :
 
 We can see that the server receiving messages from both clients and responding, demonstrating that the multi-threaded server can handle multiple client connections simultaneously.
 
-# Unit Testing
+## Unit Testing
 We use JUnit 5 to test the different classes of the project. We test the `UDPClient` and`UDPServer` classes.
 
 ### [`UDPClientTest`](src/ensea/rts/udp/UDPClientTest.java)
