@@ -82,11 +82,13 @@ public class TCPServer {
     public static void main(String[] args) {
         int port = 9090;
         if (args.length > 0) {
-            TCPServer server = new TCPServer(port);
-            server.launch();
-        } else {
-            TCPServer server = new TCPServer();
-            server.launch();
+            try {
+                port = Integer.parseInt(args[0]);
+            } catch (NumberFormatException e) {
+                System.err.println("Invalid port number, using default port " + port);
+            }
         }
+        TCPServer server = new TCPServer(port);
+        server.launch();
     }
 }

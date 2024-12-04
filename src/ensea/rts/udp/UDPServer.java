@@ -68,11 +68,13 @@ public class UDPServer {
     public static void main(String[] args) throws IOException {
         int port = 70;
         if (args.length > 0) {
-            UDPServer server = new UDPServer(port);
-            server.launch();
-        } else {
-            UDPServer server = new UDPServer();
-            server.launch();
+            try {
+                port = Integer.parseInt(args[0]);
+            } catch (NumberFormatException e) {
+                System.err.println("Invalid port number, using default port " + port);
+            }
         }
+        UDPServer server = new UDPServer(port);
+        server.launch();
     }
 }
