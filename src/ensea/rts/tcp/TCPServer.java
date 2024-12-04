@@ -30,10 +30,16 @@ public class TCPServer {
         this.port = port;
     }
 
+    /**
+     * Constructs a TCPServer with the default port number 9090.
+     */
     public TCPServer() {
         this.port = 9090;
     }
 
+    /**
+     * Launches the TCP server to start listening for incoming client connections.
+     */
     public void launch() {
         try (ServerSocket serverSocket = new ServerSocket(port)) {
             System.out.println("Server started on port: " + port);

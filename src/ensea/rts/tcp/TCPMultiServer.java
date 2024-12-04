@@ -62,10 +62,19 @@ class ClientHandler extends Thread {
     private static final int maxBytes = 1024;
     private final byte[] buffer = new byte[maxBytes];
 
+    /**
+     * Constructs a ClientHandler with the specified client socket.
+     *
+     * @param socket the client socket
+     */
     public ClientHandler(Socket socket) {
         this.clientSocket = socket;
     }
 
+    /**
+     * Runs the client handler thread.
+     * Handles communication with the connected client.
+     */
     @Override
     public void run() {
         try (PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);

@@ -1,15 +1,17 @@
 import java.io.IOException;
+import java.util.Arrays;
 
-import ensea.rts.tcp.TCPClient;
-import ensea.rts.tcp.TCPServer;
-import ensea.rts.tcp.TCPMultiServer;
-import ensea.rts.udp.UDPClient;
-import ensea.rts.udp.UDPServer;
+import ensea.rts.tcp.*;
+import ensea.rts.udp.*;
 
-/**
- * The Main class serves as the entry point for the application.
- */
 public class main {
+    /**
+     * The main method that serves as the entry point for the application.
+     * It takes command-line arguments to determine the mode of operation.
+     *
+     * @param args Command-line arguments where the first argument specifies the mode.
+     * @throws IOException If an I/O error occurs.
+     */
     public static void main(String[] args) throws IOException {
         if (args.length < 1) {
             System.err.println("Usage: java -jar app.jar <mode> [options]");
@@ -20,23 +22,27 @@ public class main {
         String mode = args[0];
         switch (mode) {
             case "tcp-client":
-                TCPClient.main(args.length > 1 ? java.util.Arrays.copyOfRange(args, 1, args.length) : new String[]{});
+                // Start the TCP client with the remaining arguments
+                TCPClient.main(args.length > 1 ? Arrays.copyOfRange(args, 1, args.length) : new String[]{});
                 break;
             case "tcp-server":
-                TCPServer.main(args.length > 1 ? java.util.Arrays.copyOfRange(args, 1, args.length) : new String[]{});
+                // Start the TCP server with the remaining arguments
+                TCPServer.main(args.length > 1 ? Arrays.copyOfRange(args, 1, args.length) : new String[]{});
                 break;
             case "tcp-multiserver":
-                TCPMultiServer.main(args.length > 1 ? java.util.Arrays.copyOfRange(args, 1, args.length) : new String[]{});
+                // Start the TCP multi-server with the remaining arguments
+                TCPMultiServer.main(args.length > 1 ? Arrays.copyOfRange(args, 1, args.length) : new String[]{});
                 break;
-
             case "udp-client":
-                UDPClient.main(args.length > 1 ? java.util.Arrays.copyOfRange(args, 1, args.length) : new String[]{});
+                // Start the UDP client with the remaining arguments
+                UDPClient.main(args.length > 1 ? Arrays.copyOfRange(args, 1, args.length) : new String[]{});
                 break;
             case "udp-server":
-                UDPServer.main(args.length > 1 ? java.util.Arrays.copyOfRange(args, 1, args.length) : new String[]{});
+                // Start the UDP server with the remaining arguments
+                UDPServer.main(args.length > 1 ? Arrays.copyOfRange(args, 1, args.length) : new String[]{});
                 break;
-
             default:
+                // Print an error message for an unknown mode
                 System.err.println("Unknown mode: " + mode);
         }
     }

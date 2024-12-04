@@ -20,15 +20,22 @@ public class UDPServer {
         this.listeningPort = listeningPort;
     }
 
+    /**
+     * Default constructor to initialize UDPServer with the default port 70.
+     */
     public UDPServer() {
         this.listeningPort = 70;
     }
 
+    /**
+     * Launches the UDP server to start listening for incoming datagrams.
+     *
+     * @throws IOException if an I/O error occurs.
+     */
     public void launch() throws IOException {
         DatagramSocket socket = new DatagramSocket(listeningPort);
         System.out.println("Server started on port: " + listeningPort);
 
-        // TODO: maybe add a timeout depending of the state of the server
         while (true) {
             DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
             socket.receive(packet);
@@ -42,6 +49,11 @@ public class UDPServer {
         }
     }
 
+    /**
+     * Returns a string representation of the UDPServer.
+     *
+     * @return a string indicating the port on which the server is listening.
+     */
     @Override
     public String toString() {
         return "UDPServer listening on port: " + listeningPort;
@@ -51,6 +63,7 @@ public class UDPServer {
      * Main method to run the UDPServer.
      *
      * @param args Command line arguments.
+     * @throws IOException if an I/O error occurs.
      */
     public static void main(String[] args) throws IOException {
         int port = 70;

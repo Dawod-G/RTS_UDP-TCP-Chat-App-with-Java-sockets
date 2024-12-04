@@ -20,6 +20,11 @@ public class ThreadTest extends Thread {
         }
     }
 
+    /**
+     * The main method creates and starts five instances of ThreadTest.
+     *
+     * @param args Command-line arguments (not used).
+     */
     public static void main(String[] args) {
         for (int i = 0; i < 5; i++) {
             ThreadTest thread = new ThreadTest();
